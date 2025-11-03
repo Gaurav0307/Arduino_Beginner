@@ -3,12 +3,13 @@
 #include <Adafruit_SSD1306.h>
 #include "DHT.h"
 
-// OLED display dimensions
+// // OLED display configuration
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
+#define OLED_RESET -1
 
 // Create display object (I2C address 0x3C is common)
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 // DHT11 setup
 #define DHTPIN 2
