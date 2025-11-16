@@ -16,7 +16,7 @@ void setup() {
 }
 
 void loop() {
-  int motion = digitalRead(PIR_PIN);
+  int motion = digitalRead(PIR_PIN);ch
 
   if (motion == HIGH) {
     tone(BUZZER_PIN, 2500);   // Turn buzzer ON with a 2.5kHz tone
