@@ -101,7 +101,7 @@ void loop() {
   // Temperature in Celsius
   display.setTextSize(1);
   display.setCursor(2, 20);
-  display.print(tempC, 2);
+  display.print(tempC, 1);
   display.print((char)247); // Degree symbol
   display.print("C");
 
