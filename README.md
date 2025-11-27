@@ -1,64 +1,132 @@
 <div align="center" style="margin-top:20px;">
-  <h1 style="font-size:40px; color:#2C97FA; font-weight:700;">
-    🔌 Arduino Beginner Projects
-  </h1>
-  <p style="font-size:18px; color:#555; max-width:650px;">
-    A collection of beginner-friendly Arduino projects to learn electronics, sensors, modules, and real-world applications.
-  </p>
   
-  <img src="https://img.shields.io/badge/Arduino-Projects-blue?style=for-the-badge&logo=arduino" />
-  <img src="https://img.shields.io/badge/Language-C/C++-brightgreen?style=for-the-badge" />
+  <!-- Arduino Logo -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/Arduino_Logo.svg" width="120" />
+
+  <h1 style="font-size:42px; color:#0A9EDC; font-weight:800; margin-bottom:10px;">
+    Arduino Beginner Projects
+  </h1>
+
+  <p style="font-size:18px; max-width:700px; color:#444;">
+    A curated collection of simple, fun, and educational Arduino projects designed for beginners learning electronics, sensors, modules, and microcontroller programming.
+  </p>
+
+  <!-- Badges -->
+  <img src="https://img.shields.io/badge/Platform-Arduino-blue?style=for-the-badge&logo=arduino" />
+  <img src="https://img.shields.io/badge/Language-C%2FC%2B%2B-green?style=for-the-badge" />
   <img src="https://img.shields.io/github/stars/Gaurav0307/Arduino_Beginner?style=for-the-badge" />
+  <br>
+  <img src="https://img.shields.io/github/forks/Gaurav0307/Arduino_Beginner?style=flat-square" />
+  <img src="https://img.shields.io/github/last-commit/Gaurav0307/Arduino_Beginner?style=flat-square" />
+
 </div>
 
 ---
 
-<h2 style="color:#2C97FA;">📁 Project List</h2>
+## 🎯 **About This Repository**
 
-<table style="width:100%; border-collapse: collapse;">
-  <tr style="background:#2C97FA; color:white;">
-    <th style="padding:12px; text-align:left;">Project</th>
-    <th style="padding:12px; text-align:left;">Description</th>
-  </tr>
+This repository contains multiple Arduino projects that help beginners understand:
 
-  <tr style="background:#f9f9f9;">
-    <td style="padding:10px;">🔊 Clap Switch</td>
-    <td style="padding:10px;">Turns ON/OFF an LED or relay using a clap sound.</td>
-  </tr>
+- Basic circuits  
+- Sensors & modules  
+- Input/output devices  
+- Data display  
+- Real-world embedded systems  
 
-  <tr>
-    <td style="padding:10px;">🌡️ DHT11 Temperature & Humidity</td>
-    <td style="padding:10px;">Reads and displays temperature & humidity on serial/OLED.</td>
-  </tr>
+Each project includes:
 
-  <tr style="background:#f9f9f9;">
-    <td style="padding:10px;">📡 Ultrasonic Distance Meter</td>
-    <td style="padding:10px;">Measures distance of objects using HC-SR04 sensor.</td>
-  </tr>
-
-  <tr>
-    <td style="padding:10px;">🚨 PIR Motion Detector</td>
-    <td style="padding:10px;">Detects human movement and triggers a buzzer.</td>
-  </tr>
-
-  <tr style="background:#f9f9f9;">
-    <td style="padding:10px;">🌫️ MQ135 Air Quality Monitor</td>
-    <td style="padding:10px;">Measures air pollution levels using MQ135 sensor.</td>
-  </tr>
-
-  <tr>
-    <td style="padding:10px;">🎵 Audio Playback / Tone Generation</td>
-    <td style="padding:10px;">Plays tones or audio files with Arduino modules.</td>
-  </tr>
-
-  <tr style="background:#f9f9f9;">
-    <td style="padding:10px;">🧭 Servo Radar Scanner</td>
-    <td style="padding:10px;">Creates a radar-like scanning system using servo + ultrasonic.</td>
-  </tr>
-</table>
+✔ Source code  
+✔ Circuit explanation  
+✔ Hardware required  
+✔ Comments for learning  
+✔ Expandable ideas  
 
 ---
 
-<h2 style="color:#2C97FA;">📸 Screenshots / Demo (Optional)</h2>
+## 📁 **Project List**
 
-<p>Add images or GIFs of your projects here to make the README more attractive.</p>
+<table style="width:100%; border-collapse: collapse; font-size:16px;">
+  <tr style="background:#0A9EDC; color:white;">
+    <th style="padding:12px; text-align:left;">Project</th>
+    <th style="padding:12px; text-align:left;">Description</th>
+    <th style="padding:12px; text-align:left;">Hardware Used</th>
+  </tr>
+
+  <tr style="background:#f7faff;">
+    <td style="padding:12px;">🔊 Clap Switch</td>
+    <td style="padding:12px;">Turns ON/OFF appliances using a clap sound or noise detection sensor.</td>
+    <td style="padding:12px;">Sound Sensor, LED/Relay</td>
+  </tr>
+
+  <tr>
+    <td style="padding:12px;">🌡️ DHT11 Temperature & Humidity</td>
+    <td style="padding:12px;">Reads temperature & humidity and displays via Serial/OLED.</td>
+    <td style="padding:12px;">DHT11, OLED (Optional)</td>
+  </tr>
+
+  <tr style="background:#f7faff;">
+    <td style="padding:12px;">📡 Ultrasonic Distance Meter</td>
+    <td style="padding:12px;">Measures object distance using HC-SR04 and shows live readings.</td>
+    <td style="padding:12px;">HC-SR04 Ultrasonic Sensor</td>
+  </tr>
+
+  <tr>
+    <td style="padding:12px;">🧭 Servo Radar Scanner</td>
+    <td style="padding:12px;">Creates a radar-style scanner using servo + ultrasonic sensor.</td>
+    <td style="padding:12px;">Servo Motor, HC-SR04</td>
+  </tr>
+
+  <tr style="background:#f7faff;">
+    <td style="padding:12px;">🚨 PIR Motion Detector</td>
+    <td style="padding:12px;">Detects human motion and triggers buzzer or LED.</td>
+    <td style="padding:12px;">PIR Sensor, Buzzer</td>
+  </tr>
+
+  <tr>
+    <td style="padding:12px;">🌫️ MQ135 Air Quality Monitor</td>
+    <td style="padding:12px;">Measures CO₂ and pollution levels using MQ135 gas sensor.</td>
+    <td style="padding:12px;">MQ135 Sensor</td>
+  </tr>
+
+  <tr style="background:#f7faff;">
+    <td style="padding:12px;">🎵 Tone / Sound Generator</td>
+    <td style="padding:12px;">Plays melodies or tones using Arduino tone() function.</td>
+    <td style="padding:12px;">Buzzer</td>
+  </tr>
+</table>
+
+<div align="center" style="margin-top:40px;"> <h2 style="color:#0A9EDC;">⭐ If you like this repository, don’t forget to star it!</h2> <img src="https://img.shields.io/github/stars/Gaurav0307/Arduino_Beginner?style=social" />
+
+<br><br>
+
+<p style="font-size:16px;">Made with ❤️ by <strong>Gaurav Prasad</strong></p> </div>
+
+---
+
+## 🔧 **Hardware Required**
+
+You will need:
+
+- Arduino Uno / Nano  
+- Breadboard  
+- Jumper wires  
+- LEDs & resistors  
+- Ultrasonic sensor  
+- PIR sensor  
+- MQ135 gas sensor  
+- DHT11 module  
+- 0.96" OLED Display  
+- Servo motor  
+
+---
+
+## 🚀 **How to Run These Projects**
+
+```bash
+# Clone the repository
+git clone https://github.com/Gaurav0307/Arduino_Beginner
+
+# Open Arduino IDE
+# Choose a project folder
+# Connect Arduino UNO/Nano
+# Verify & Upload code
