@@ -1,142 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arduino Beginner Projects - README</title>
-  <style>
-    body {
-      font-family: "Poppins", Arial, sans-serif;
-      background: #f5f7fa;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      line-height: 1.6;
-    }
+<div align="center" style="margin-top:20px;">
+  <h1 style="font-size:40px; color:#2C97FA; font-weight:700;">
+    🔌 Arduino Beginner Projects
+  </h1>
+  <p style="font-size:18px; color:#555; max-width:650px;">
+    A collection of beginner-friendly Arduino projects to learn electronics, sensors, modules, and real-world applications.
+  </p>
+  
+  <img src="https://img.shields.io/badge/Arduino-Projects-blue?style=for-the-badge&logo=arduino" />
+  <img src="https://img.shields.io/badge/Language-C/C++-brightgreen?style=for-the-badge" />
+  <img src="https://img.shields.io/github/stars/Gaurav0307/Arduino_Beginner?style=for-the-badge" />
+</div>
 
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      border: 1px solid #e4e4e4;
-    }
+---
 
-    h1 {
-      text-align: center;
-      color: #007bff;
-      font-size: 2.6rem;
-      margin-bottom: 10px;
-    }
+<h2 style="color:#2C97FA;">📁 Project List</h2>
 
-    h2 {
-      color: #0056b3;
-      border-left: 5px solid #007bff;
-      padding-left: 10px;
-      margin-top: 40px;
-    }
+<table style="width:100%; border-collapse: collapse;">
+  <tr style="background:#2C97FA; color:white;">
+    <th style="padding:12px; text-align:left;">Project</th>
+    <th style="padding:12px; text-align:left;">Description</th>
+  </tr>
 
-    p, li {
-      font-size: 1.05rem;
-    }
+  <tr style="background:#f9f9f9;">
+    <td style="padding:10px;">🔊 Clap Switch</td>
+    <td style="padding:10px;">Turns ON/OFF an LED or relay using a clap sound.</td>
+  </tr>
 
-    ul {
-      background: #f0f6ff;
-      padding: 20px;
-      border-radius: 10px;
-      list-style: square inside;
-      border: 1px solid #d9e8ff;
-    }
+  <tr>
+    <td style="padding:10px;">🌡️ DHT11 Temperature & Humidity</td>
+    <td style="padding:10px;">Reads and displays temperature & humidity on serial/OLED.</td>
+  </tr>
 
-    code, pre {
-      background: #1e1e1e;
-      color: #00e676;
-      padding: 12px;
-      border-radius: 10px;
-      display: block;
-      overflow-x: auto;
-      margin-top: 10px;
-      font-size: 0.95rem;
-    }
+  <tr style="background:#f9f9f9;">
+    <td style="padding:10px;">📡 Ultrasonic Distance Meter</td>
+    <td style="padding:10px;">Measures distance of objects using HC-SR04 sensor.</td>
+  </tr>
 
-    .badge {
-      display: inline-block;
-      background: #007bff;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      margin-right: 8px;
-    }
+  <tr>
+    <td style="padding:10px;">🚨 PIR Motion Detector</td>
+    <td style="padding:10px;">Detects human movement and triggers a buzzer.</td>
+  </tr>
 
-    .footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 1rem;
-      color: #555;
-    }
+  <tr style="background:#f9f9f9;">
+    <td style="padding:10px;">🌫️ MQ135 Air Quality Monitor</td>
+    <td style="padding:10px;">Measures air pollution levels using MQ135 sensor.</td>
+  </tr>
 
-    .star {
-      color: #ffb300;
-      font-size: 1.2rem;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Arduino Beginner Projects</h1>
-    <p class="badge">Beginner Friendly</p>
-    <p class="badge">Open Source</p>
-    <p class="badge">Easy to Learn</p>
+  <tr>
+    <td style="padding:10px;">🎵 Audio Playback / Tone Generation</td>
+    <td style="padding:10px;">Plays tones or audio files with Arduino modules.</td>
+  </tr>
 
-    <p>Welcome to <strong>Arduino Beginner Projects</strong>! 👋<br>
-      A collection of simple and beautifully organized Arduino examples created for beginners, students, and hobbyists.
-    </p>
+  <tr style="background:#f9f9f9;">
+    <td style="padding:10px;">🧭 Servo Radar Scanner</td>
+    <td style="padding:10px;">Creates a radar-like scanning system using servo + ultrasonic.</td>
+  </tr>
+</table>
 
-    <h2>🚀 About This Repository</h2>
-    <p>This repo is perfect for anyone learning Arduino and electronics. All projects are clean, simple, and well-commented.</p>
+---
 
-    <h2>📂 Project List</h2>
-    <ul>
-      <li>LED Blinking</li>
-      <li>Ultrasonic Distance Measurement</li>
-      <li>DHT11 Temperature & Humidity</li>
-      <li>PIR Motion Detection</li>
-      <li>Servo Motor Control</li>
-      <li>MQ135 Air Quality Sensor</li>
-      <li>OLED Display Examples</li>
-      <li>Sound Sensor Clap Switch</li>
-      <li>More projects added frequently 🚀</li>
-    </ul>
+<h2 style="color:#2C97FA;">📸 Screenshots / Demo (Optional)</h2>
 
-    <h2>🛠️ Hardware & Software Used</h2>
-    <p><strong>Hardware:</strong></p>
-    <ul>
-      <li>Arduino UNO / Nano / Mega</li>
-      <li>Sensors (HC-SR04, MQ135, DHT11, PIR, etc.)</li>
-      <li>OLED displays, buzzers, servo motors</li>
-      <li>Breadboard, resistors, jumper wires</li>
-    </ul>
-
-    <p><strong>Software:</strong></p>
-    <ul>
-      <li>Arduino IDE</li>
-      <li>Required project libraries</li>
-    </ul>
-
-    <h2>📦 How to Use</h2>
-    <p>Clone the repository and upload any sketch to your Arduino board:</p>
-    <pre><code>git clone https://github.com/Gaurav0307/Arduino_Beginner</code></pre>
-
-    <h2>🤝 Contributing</h2>
-    <p>Want to contribute? Feel free to open a pull request and share your ideas!</p>
-
-    <h2>⭐ Support</h2>
-    <p>If you like this repository, give it a star <span class="star">⭐</span> on GitHub!</p>
-
-    <div class="footer">Created with ❤️ by <strong>Gaurav Prasad</strong></div>
-  </div>
-</body>
-</html>
+<p>Add images or GIFs of your projects here to make the README more attractive.</p>
