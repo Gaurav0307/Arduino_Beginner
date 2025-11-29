@@ -24,11 +24,11 @@ void onMessageReceived(int messageSize) {
 
   if (message == "ON") {
     lightState = true;
-    digitalWrite(relayPin, HIGH);
+    digitalWrite(relayPin, LOW);
   }
   else if (message == "OFF") {
     lightState = false;
-    digitalWrite(relayPin, LOW);
+    digitalWrite(relayPin, HIGH);
   }
 
   // Publish current state back
@@ -41,7 +41,7 @@ void setup() {
   Serial.begin(115200);
 
   pinMode(relayPin, OUTPUT);
-  digitalWrite(relayPin, LOW);
+  digitalWrite(relayPin, HIGH);
 
   // Connect WiFi
   Serial.print("Connecting WiFi");
