@@ -44,7 +44,7 @@ void setup() {
   digitalWrite(relayPin, HIGH);
 
   // Connect WiFi
-  Serial.print("Connecting WiFi");
+  Serial.print("Connecting WiFi...");
   while (WiFi.begin(ssid, pass) != WL_CONNECTED) {
     Serial.print(".");
     delay(1000);
@@ -59,7 +59,7 @@ void setup() {
     Serial.print(".");
     delay(1000);
   }
-  Serial.println("\nMQTT Connected!");
+  Serial.println("\nConnected!");
 
   mqttClient.subscribe(lightSetTopic);
 }
