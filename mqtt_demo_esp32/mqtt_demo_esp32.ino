@@ -1,4 +1,4 @@
-#include <WiFiS3.h>
+#include <WiFi.h> // For ESP32
 #include <ArduinoMqttClient.h>
 
 char ssid[] = "Airtel_Gaurav_5G";
@@ -39,29 +39,42 @@ void onMessageReceived(int messageSize) {
 
 void setup() {
   Serial.begin(115200);
+  delay(1000);   // Important for ESP32-C3
 
   pinMode(relayPin, OUTPUT);
   digitalWrite(relayPin, HIGH);
 
   // Connect WiFi
-  Serial.print("Connecting WiFi...");
-  while (WiFi.begin(ssid, pass) != WL_CONNECTED) {
+  WiFi.disconnect(true);   // Stop connection and clear previous config
+  delay(200);
+
+  WiFi.mode(WIFI_STA);
+  WiFi.setAutoReconnect(true);
+  WiFi.begin(ssid, pass);
+
+  Serial.print("Connecting WiFi");
+  while (WiFi.status() != WL_CONNECTED) {
     Serial.print(".");
-    delay(1000);
+    delay(500);
   }
   Serial.println("\nConnected!");
+
+  Serial.print("IP: ");
+  Serial.println(WiFi.localIP());
 
   // Connect MQTT
   mqttClient.onMessage(onMessageReceived);
 
-  Serial.print("Connecting to MQTT...");
+  Serial.print("Connecting to MQTT");
   while (!mqttClient.connect(broker, port)) {
     Serial.print(".");
-    delay(1000);
+    delay(500);
   }
   Serial.println("\nConnected!");
 
   mqttClient.subscribe(lightSetTopic);
+
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
