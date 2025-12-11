@@ -55,7 +55,7 @@ void setup() {
   Serial.print("Connecting WiFi");
   while (WiFi.status() != WL_CONNECTED) {
     Serial.print(".");
-    delay(500);
+    delay(1000);
   }
   Serial.println("\nConnected!");
 
@@ -68,7 +68,7 @@ void setup() {
   Serial.print("Connecting to MQTT");
   while (!mqttClient.connect(broker, port)) {
     Serial.print(".");
-    delay(500);
+    delay(1000);
   }
   Serial.println("\nConnected!");
 

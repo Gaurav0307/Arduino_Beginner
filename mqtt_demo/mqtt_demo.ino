@@ -44,7 +44,7 @@ void setup() {
   digitalWrite(relayPin, HIGH);
 
   // Connect WiFi
-  Serial.print("Connecting WiFi...");
+  Serial.print("Connecting WiFi");
   while (WiFi.begin(ssid, pass) != WL_CONNECTED) {
     Serial.print(".");
     delay(1000);
@@ -54,7 +54,7 @@ void setup() {
   // Connect MQTT
   mqttClient.onMessage(onMessageReceived);
 
-  Serial.print("Connecting to MQTT...");
+  Serial.print("Connecting to MQTT");
   while (!mqttClient.connect(broker, port)) {
     Serial.print(".");
     delay(1000);
