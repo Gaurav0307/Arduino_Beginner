@@ -1,4 +1,8 @@
 #include <DHT.h>
+#include "ArduinoGraphics.h"
+#include "Arduino_LED_Matrix.h"
+
+ArduinoLEDMatrix matrix;
 
 #define DHTTYPE DHT11
 #define DHTPIN 2
@@ -13,12 +17,15 @@ float tempF;
 int humid;
 float heatIndexC;
 float heatIndexF;
-String message;
+String message1, message2;
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(baud);
+
   dht.begin();
+
+  matrix.begin();
 
   delayT*=1000;
 }
@@ -38,11 +45,19 @@ void loop() {
   heatIndexC = dht.computeHeatIndex(tempC, humid, false);
   heatIndexF = dht.computeHeatIndex(tempF, humid, true);
 
-  message = "Temperature: " + String(tempC) + "°C and " + String(tempF) + "°F | Humidity: " + String(humid) + "% \n";
+  message1 = "Temperature: " + String(tempC) + "°C and " + String(tempF) + "°F | Humidity: " + String(humid) + "%";
 
-  message += "Heat Index / Feels Like: " + String(heatIndexC) + "°C and " + String(heatIndexF) + "°F";
+  message2 = "Heat Index / Feels Like: " + String(heatIndexC) + "°C and " + String(heatIndexF) + "°F";
 
-  Serial.println(message);
+  Serial.println(message1 + "\n" + message2);
 
-  delay(delayT);
+  matrix.beginDraw();
+  matrix.textScrollSpeed(100);
+  matrix.textFont(Font_5x7);
+  matrix.beginText(10,1,255,0,0);
+  matrix.println(message1 + " " + message2);
+  matrix.endText(SCROLL_LEFT);
+  matrix.endDraw();
+
+  // delay(delayT);
 }
