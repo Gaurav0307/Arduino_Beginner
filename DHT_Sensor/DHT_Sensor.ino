@@ -10,7 +10,7 @@ ArduinoLEDMatrix matrix;
 DHT dht(DHTPIN, DHTTYPE);
 
 int baud = 9600;
-int delayT = 3; // Seconds
+int delayT = 3;  // Seconds
 
 float tempC;
 float tempF;
@@ -27,7 +27,7 @@ void setup() {
 
   matrix.begin();
 
-  delayT*=1000;
+  delayT *= 1000;
 }
 
 void loop() {
@@ -54,7 +54,7 @@ void loop() {
   matrix.beginDraw();
   matrix.textScrollSpeed(100);
   matrix.textFont(Font_5x7);
-  matrix.beginText(10,1,255,0,0);
+  matrix.beginText(10, 1, 255, 0, 0);
   matrix.println(message1 + " " + message2);
   matrix.endText(SCROLL_LEFT);
   matrix.endDraw();
