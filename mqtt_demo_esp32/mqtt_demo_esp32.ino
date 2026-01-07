@@ -13,7 +13,7 @@ int port = 1883;
 const char lightSetTopic[] = "gaurav03071992_home/light/set";       // Flutter → Arduino
 const char lightStatusTopic[] = "gaurav03071992_home/light/status"; // Arduino → Flutter
 
-const int relayPin = 2;
+const int relayPin = 10;
 bool lightState = false;
 
 void onMessageReceived(int messageSize) {
