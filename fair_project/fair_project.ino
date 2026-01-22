@@ -124,7 +124,7 @@ DHT dht(DHTPIN, DHTTYPE);
 /* ================= GLOBALS ================= */
 float tempC, tempF, humidity;
 float correctedPPM;
-const char* airStatus;
+char* airStatus;
 
 void sensorSetup() {
   dht.begin();
@@ -174,7 +174,7 @@ void weather() {
   float rzero = gasSensor.getRZero();
   float correctedRZero = gasSensor.getCorrectedRZero(tempC, humidity); // 25°C, 50%
   float ppm = gasSensor.getPPM();
-  float correctedPPM = gasSensor.getCorrectedPPM(tempC, humidity);     // Apply temperature & humidity correction
+  correctedPPM = gasSensor.getCorrectedPPM(tempC, humidity);     // Apply temperature & humidity correction
 
   /* ===== AQI Status ===== */
   if (correctedPPM <= 50) airStatus = "Excellent";
@@ -234,6 +234,28 @@ void weather() {
   } while (u8g2.nextPage());
 }
 
+void publishSensorStatus() {
+  mqttClient.beginMessage("gaurav03071992_home/sensor/tempC");
+  mqttClient.print(tempC);
+  mqttClient.endMessage();
+
+  mqttClient.beginMessage("gaurav03071992_home/sensor/tempF");
+  mqttClient.print(tempF);
+  mqttClient.endMessage();
+
+  mqttClient.beginMessage("gaurav03071992_home/sensor/humidity");
+  mqttClient.print((int)humidity);
+  mqttClient.endMessage();
+
+  mqttClient.beginMessage("gaurav03071992_home/sensor/aqi");
+  mqttClient.print((int)correctedPPM);
+  mqttClient.endMessage();
+
+  mqttClient.beginMessage("gaurav03071992_home/sensor/airStatus");
+  mqttClient.print(airStatus);
+  mqttClient.endMessage();
+}
+
 /* ================= SETUP ================= */
 void setup() {
   Serial.begin(115200);
@@ -248,4 +270,5 @@ void setup() {
 void loop() {
   mqttClient.poll();
   weather();
+  publishSensorStatus();
 }
