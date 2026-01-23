@@ -75,7 +75,7 @@ void publishStatus(int id) {
   mqttClient.endMessage();
 }
 
-void publishStatus1() {
+void publishStatusForAppUI() {
   for (int id = 0; id < DEVICE_COUNT; id++) {
     mqttClient.beginMessage(statusTopics[id]);
     mqttClient.print(deviceState[id] ? "ON" : "OFF");
@@ -280,9 +280,11 @@ int iterate = 0;
 void loop() {
   mqttClient.poll();
   weather();
-  if(iterate == 2) {
+  if(iterate == 1) {
     publishSensorStatus();
-    publishStatus1();
+    iterate++;
+  } else if(iterate == 2) {
+    publishStatusForAppUI();
     iterate = 0;
   } else {
     iterate++;
