@@ -7,6 +7,8 @@ int trigPin = 4;
 
 int pingTime;
 double distance;
+int ft;
+double in;
 
 int BAUD = 9600;
 
@@ -49,21 +51,30 @@ void loop() {
 
     distance = 0.0134492 * pingTime / 2;
 
+    ft = distance / 12;
+
+    in = distance - (ft * 12.0);
+
     Serial.print("Distance : ");
 
-    Serial.println(distance);
+    Serial.print(String(ft) + " ft ");
+
+    Serial.println(String(in) + " in");
 
     oled.clearDisplay();
     oled.setTextColor(WHITE);
     oled.setTextSize(1);
-    oled.setCursor(10, 2);
+    oled.setCursor(40, 0);
     oled.print("Distance");
+    oled.drawLine(0, 8, 128, 8, WHITE);
     oled.setTextSize(2);
-    oled.setCursor(10, 12);
-    oled.print(distance);
+    oled.setCursor(10, 15);
+    oled.print(String(ft) + " ft");
     oled.setTextSize(1);
-    oled.setCursor(90, 18);
-    oled.print(" inch");
+    oled.setCursor(90, 14);
+    oled.print(in);
+    oled.setCursor(90, 22);
+    oled.print("inch");
     oled.display();
 
     delay(200); // Debounce delay
