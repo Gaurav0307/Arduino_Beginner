@@ -34,13 +34,13 @@ void setup() {
     radio.openWritingPipe(address);
     radio.setChannel(108);
     radio.setDataRate(RF24_250KBPS);
-    radio.setPALevel(RF24_PA_MIN);
+    radio.setPALevel(RF24_PA_HIGH);
     radio.stopListening();
   } else if(type == "Receiver") {
     radio.openReadingPipe(0, address);
     radio.setChannel(108);
     radio.setDataRate(RF24_250KBPS);
-    radio.setPALevel(RF24_PA_MIN);
+    radio.setPALevel(RF24_PA_HIGH);
     radio.startListening();
   }
 
@@ -48,6 +48,8 @@ void setup() {
 }
 
 void loop() {
+  digitalWrite(LED_PIN, HIGH);
+
   if(type.equals("Transmitter")) {
     const char text[] = "Hello World";
     radio.write(&text, sizeof(text));
@@ -59,9 +61,8 @@ void loop() {
       radio.read(&text, sizeof(text));
       Serial.println("Received: " + String(text));
 
-      digitalWrite(LED_PIN, HIGH);
-      delay(500);
       digitalWrite(LED_PIN, LOW);
+      delay(500);
     }
   }
 }
